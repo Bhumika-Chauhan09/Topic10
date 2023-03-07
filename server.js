@@ -1,8 +1,9 @@
 const express = require('express');
+const cors=require("cors");
 const app = express();
 const port = 3000;
 const base = `${__dirname}/public`;
-const cors=require("cors");
+
 app.use(express.static('public'));
 app.use(cors());
 
@@ -31,3 +32,12 @@ app.get('*', (req, res) => {
   res.setHeader("Access-Control-Allow-Credentials","true");
   res.send("API is running");
 });
+
+
+app.get('/products/:id', function (req, res, next) {
+  res.json({msg: 'This is CORS-enabled for all origins!'})
+})
+ 
+app.listen(80, function () {
+  console.log('CORS-enabled web server listening on port 80')
+})
