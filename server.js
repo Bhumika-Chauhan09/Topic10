@@ -6,11 +6,11 @@ const port = 3000;
 
 /*app.get('/', function (req, res) {
   res.sendFile(`${base}/device-list.html`);
-});
+});*/
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });
-app.get('/register-device', (req, res) => {
+/*app.get('/register-device', (req, res) => {
   res.sendFile(`${base}/register-device.html`);
 });
 
