@@ -1,14 +1,10 @@
 const express = require('express');
-const cors=require("cors");
 const app = express();
 const port = 3000;
-const base = `${__dirname}/public`;
+//const base = `${__dirname}/public`;
+//app.use(express.static('public'));
 
-app.use(express.static('public'));
-app.use(cors());
-
-
-app.get('/', function (req, res) {
+/*app.get('/', function (req, res) {
   res.sendFile(`${base}/device-list.html`);
 });
 app.listen(port, () => {
@@ -27,11 +23,8 @@ app.get('/iot-applications', (req, res) => {
 });
 app.get('*', (req, res) => {
   res.sendFile(`${base}/404.html`);
-});
-app.get('*', (req, res) => {
-  res.setHeader("Access-Control-Allow-Credentials","true");
+});*/
+app.get("*", (req, res) => {
+  res.setHeader("Access-Control-Allow-Credentials", "true");
   res.send("API is running");
 });
-
-
-
