@@ -26,5 +26,5 @@ app.get('*', (req, res) => {
 });*/
 app.get("*", (req, res) => {
   res.setHeader("Access-Control-Allow-Credentials", "true");
-  res.send("API is running");
+  res.send("Hello world");
 });
